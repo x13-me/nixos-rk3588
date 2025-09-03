@@ -17,7 +17,7 @@ in {
     kernelPackages = pkgsKernel.linuxPackages_6_16;
 
     # kernelParams copy from Armbian's /boot/armbianEnv.txt & /boot/boot.cmd
-    kernelParams = [
+    kernelParams = lib.mkBefore [
       "rootwait"
 
       "earlycon" # enable early console, so we can see the boot messages via serial port / HDMI
