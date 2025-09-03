@@ -3,11 +3,10 @@
 # =========================================================================
 {
   pkgs,
-  rk3588,
+  lib
   ...
-}: let
-  pkgsKernel = rk3588.pkgsKernel;
-in {
+}:
+{
   imports = [
     ./base.nix
     ./dtb-install.nix
@@ -39,11 +38,11 @@ in {
   hardware = {
     deviceTree = {
       name = "rockchip/rk3588s-orangepi-5.dtb";
-      overlays = [];
+      overlays = [ ];
     };
 
     firmware = [
-      (pkgs.callPackage ../../pkgs/orangepi-firmware {})
+      (pkgs.callPackage ../../pkgs/orangepi-firmware { })
     ];
   };
 }
