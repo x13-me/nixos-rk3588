@@ -13,7 +13,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgsKernel.linuxPackages_6_16;
+    kernelPackages = pkgs.linuxPackages_6_16;
 
     # kernelParams copy from Armbian's /boot/armbianEnv.txt & /boot/boot.cmd
     kernelParams = lib.mkBefore [
